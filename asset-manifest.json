@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/ADG-Recruitment-Portal-2k20/static/css/main.7372e8fe.chunk.css",
-    "main.js": "/ADG-Recruitment-Portal-2k20/static/js/main.087f3f64.chunk.js",
-    "main.js.map": "/ADG-Recruitment-Portal-2k20/static/js/main.087f3f64.chunk.js.map",
-    "runtime-main.js": "/ADG-Recruitment-Portal-2k20/static/js/runtime-main.2a2045bb.js",
-    "runtime-main.js.map": "/ADG-Recruitment-Portal-2k20/static/js/runtime-main.2a2045bb.js.map",
-    "static/js/2.5332fbd8.chunk.js": "/ADG-Recruitment-Portal-2k20/static/js/2.5332fbd8.chunk.js",
-    "static/js/2.5332fbd8.chunk.js.map": "/ADG-Recruitment-Portal-2k20/static/js/2.5332fbd8.chunk.js.map",
-    "index.html": "/ADG-Recruitment-Portal-2k20/index.html",
-    "static/css/main.7372e8fe.chunk.css.map": "/ADG-Recruitment-Portal-2k20/static/css/main.7372e8fe.chunk.css.map",
-    "static/js/2.5332fbd8.chunk.js.LICENSE.txt": "/ADG-Recruitment-Portal-2k20/static/js/2.5332fbd8.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/ADG-Recruitment-Portal-2k20/static/media/back-img.feadef79.png",
-    "static/media/styles.module.css": "/ADG-Recruitment-Portal-2k20/static/media/vector.f9b370e3.svg",
-    "static/media/adglogo.ba947082.png": "/ADG-Recruitment-Portal-2k20/static/media/adglogo.ba947082.png",
-    "static/media/userpic.6a56817b.png": "/ADG-Recruitment-Portal-2k20/static/media/userpic.6a56817b.png"
+    "main.css": "/static/css/main.7740673a.chunk.css",
+    "main.js": "/static/js/main.087f3f64.chunk.js",
+    "main.js.map": "/static/js/main.087f3f64.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4f3d173a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4f3d173a.js.map",
+    "static/js/2.5332fbd8.chunk.js": "/static/js/2.5332fbd8.chunk.js",
+    "static/js/2.5332fbd8.chunk.js.map": "/static/js/2.5332fbd8.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.7740673a.chunk.css.map": "/static/css/main.7740673a.chunk.css.map",
+    "static/js/2.5332fbd8.chunk.js.LICENSE.txt": "/static/js/2.5332fbd8.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/back-img.feadef79.png",
+    "static/media/styles.module.css": "/static/media/vector.f9b370e3.svg",
+    "static/media/adglogo.ba947082.png": "/static/media/adglogo.ba947082.png",
+    "static/media/userpic.6a56817b.png": "/static/media/userpic.6a56817b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2a2045bb.js",
+    "static/js/runtime-main.4f3d173a.js",
     "static/js/2.5332fbd8.chunk.js",
-    "static/css/main.7372e8fe.chunk.css",
+    "static/css/main.7740673a.chunk.css",
     "static/js/main.087f3f64.chunk.js"
   ]
 }
