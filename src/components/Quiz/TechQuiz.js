@@ -125,7 +125,7 @@ class TechQuiz extends React.Component {
         // console.log(this.state.finalResponse);
     }
 
-    updateOption(qid, index, e) {
+    updateOption(qid, index) {
         this.state.finalResponse.forEach(question => {
             if(question.qid === qid) {
                 question.response = this.optionsArray[index];
@@ -145,7 +145,7 @@ class TechQuiz extends React.Component {
         console.log(this.state.finalResponse);
     }
 
-    async returnQuestionID() {
+    returnQuestionID() {
         return this.state.quizQuestions[this.state.currentQuestionIndex]._id
     }
 
@@ -184,7 +184,7 @@ class TechQuiz extends React.Component {
         }
         return(
             <Background>
-                { this.state.finalResponse.length === 0 ?
+                { this.state.quizQuestions.length === 0 ?
                     <div className="loading">Loading...</div> :
                     <>
                         <div className="heading">Technical Quiz</div>
@@ -197,41 +197,83 @@ class TechQuiz extends React.Component {
                             </div>
                             <div className='answer-section'>
                                 {Object.keys(this.state.quizQuestions[this.state.currentQuestionIndex].options).map((key, index) => {
-                                    // if(this.state.finalResponse[this.state.currentQuestionIndex].response === "e" && this.state.finalResponse.length > 0) {
+                                  console.log(this.getResponse())
+                                  if(this.state.finalResponse[this.state.currentQuestionIndex] === undefined){
+                                    return (
+                                      <div key={index} onClick={()=>{this.updateOption(this.returnQuestionID(), index)}}>
+                                          <button className="blackButton"
+                                                  value={this.optionsArray[index]}>
+                                                  {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
+                                          </button>
+                                      </div>
+                                  )
+                                  }else{
+                                    if(this.state.finalResponse[this.state.currentQuestionIndex].response === this.optionsArray[index]){
+                                      return (
+                                        <div key={index} onClick={()=>{this.updateOption(this.returnQuestionID(), index)}}>
+                                            <button className="blueButton"
+                                                    value={this.optionsArray[index]}>
+                                                    {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
+                                            </button>
+                                        </div>
+                                    )
+                                    }else{
+                                      return (
+                                        <div key={index} onClick={()=>{this.updateOption(this.returnQuestionID(), index)}}>
+                                            <button className="blackButton"
+                                                    value={this.optionsArray[index]}>
+                                                    {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
+                                            </button>
+                                        </div>
+                                    )
+                                    }
+
+                                    
+                                  }
+                                    // if(this.state.finalResponse === undefined)
                                     //     return (
-                                    //         <div key={index} onClick={(e)=>{this.updateOption(this.returnQuestionID(), index, e)}}>
+                                    //         <div key={index} onClick={()=>{this.updateOption(this.returnQuestionID(), index)}}>
                                     //             <button className="blackButton"
-                                    //                 value={this.optionsArray[index]}>
-                                    //                 {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
+                                    //                     value={this.optionsArray[index]}>
+                                    //                     {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
                                     //             </button>
                                     //         </div>
                                     //     )
-                                    // }
                                     // else {
-                                    //     if(this.state.finalResponse[this.state.currentQuestionIndex].response === this.optionsArray[index] && this.state.finalResponse.length > 0)
+                                    //         if(this.state.finalResponse[this.state.currentQuestionIndex]['response'] === this.optionsArray[index]) {
+                                    //             return (
+                                    //                 <div key={index} onClick={()=>{this.updateOption(this.returnQuestionID(), index)}}>
+                                    //                     <button className="blueButton"
+                                    //                         value={this.optionsArray[index]}>
+                                    //                         {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
+                                    //                     </button>
+                                    //                 </div>
+                                    //             )
+                                    //         }
+                                    //         else
+                                    //             return (
+                                    //                 <div key={index} onClick={()=>{this.updateOption(this.returnQuestionID(), index)}}>
+                                    //                     <button className="blackButton"
+                                    //                             value={this.optionsArray[index]}>
+                                    //                             {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
+                                    //                     </button>
+                                    //                 </div>
+                                    //             )
+                                    //     // else
+                                    // // if()
                                     //         return (
-                                    //             <div key={index} onClick={(e)=>{this.updateOption(this.returnQuestionID(), index, e)}}>
-                                    //                 <button className="blueButton"
+                                    //             // this.getResponse(this.returnQuestionID())
+                                    //             <div key={index} onClick={()=>{this.updateOption(this.returnQuestionID(), index)}}>
+                                    //                 {/* {a = await this.returnQuestionID()}
+                                    //                 {console.log(this.getResponse())}
+                                    //                 {console.log(this.state.currentQuestionIndex)} */}
+                                    //                 <button className="blackButton"
                                     //                         value={this.optionsArray[index]}>
                                     //                         {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
                                     //                 </button>
                                     //             </div>
                                     //         )
-                                        // else
-                                    // if()
-                                            return (
-                                                // this.getResponse(this.returnQuestionID())
-                                                <div key={index} onClick={(e)=>{this.updateOption(this.returnQuestionID(), index, e)}}>
-                                                    {/* {a = await this.returnQuestionID()} */}
-                                                    {console.log(this.getResponse())}
-                                                    {console.log(this.state.currentQuestionIndex)}
-                                                    <button className="blackButton"
-                                                            value={this.optionsArray[index]}>
-                                                            {this.optionsArray[index]}. {this.state.quizQuestions[this.state.currentQuestionIndex].options[key]}
-                                                    </button>
-                                                </div>
-                                            )
-                                    }
+                                    // }
                                 //     else
                                 //         return (
                                 //             <div key={index} onClick={(e)=>{this.setSelectedOption(this.state.quizQuestions[this.state.currentQuestionIndex]._id,index,e)}}>
@@ -242,7 +284,7 @@ class TechQuiz extends React.Component {
                                 //             </div>
                                 //         )
                                 // }
-                                )}
+                                })}
                             </div>
                             <div className='btn-bottom'>
                                 {this.state.currentQuestionIndex === 0 ?
